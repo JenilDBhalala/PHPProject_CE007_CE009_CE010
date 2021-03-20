@@ -1,8 +1,6 @@
-
-@extends('layouts.app')
-
+@extends('admin.adminNav')
 @section('content')
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -128,7 +126,6 @@
                                             </label>
                                         </div>
                                     @endif
-                                
                             </div>
                         </div>
                         <div class="form-group row mb-0">
@@ -144,4 +141,10 @@
         </div>
     </div>
 </div>
+<style>
+    .container{
+        color: black;
+        opacity: 0.9;
+    }
+</style>
 @endsection

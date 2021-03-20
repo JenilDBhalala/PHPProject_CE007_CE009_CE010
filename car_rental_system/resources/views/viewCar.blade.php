@@ -1,4 +1,5 @@
-
+@extends('admin.adminNav')
+@section('content')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -27,7 +28,7 @@
             </tr>
             <tr>
                 <th scope="row">City</th>
-                <td>{{$car->city}}</td>
+                <td>{{ ucfirst(trans($car->city)) }}</td>
             </tr>
             <tr>
                 <th scope="row">Seat</th>
@@ -47,11 +48,15 @@
                     @csrf
                         <input type="submit" value="Delete" class="btn btn-danger">
                 </form>
-                
             </tr>
-            
-                
-
         </tbody>
     </table>
 </div>
+<style>
+    .table{
+        background-color: aliceblue;
+        color: black;
+        opacity: 0.9;
+    }
+</style>
+@endsection

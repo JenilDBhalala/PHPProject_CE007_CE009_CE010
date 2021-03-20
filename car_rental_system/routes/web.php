@@ -1,8 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ContactUsFormController;
+use App\Http\Controllers\AdminController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,23 +17,22 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return redirect('/admin/home/'); 
+    return view('ad');
 });
-
-
-Route::post('/result',[UserController::class,'result']);
-Route::view('/upload','form');
-Route::view('/admin/addCar','addCarForm');
-Route::post('/admin/result/',[UserController::class,'addCar']);
-Route::get('/admin/showCars/',[UserController::class,'showCars']);
-Route::post('/admin/viewCar/{id}',[UserController::class,'viewCar']);
-Route::post('/admin/editCar/{id}',[UserController::class,'editCar']);
-Route::post('/admin/updateCar/{id}',[UserController::class,'update']);
-Route::post('/admin/deleteCar/{id}',[UserController::class,'deleteCar']);
-
-Route::post('/home/bookCar/',[UserController::class,'bookCar']);
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
+
+Route::get('/contact', [ContactUsFormController::class, 'createForm']);
+Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+Route::view('/admin/addCar','addCarForm');
+Route::post('/admin/result/',[AdminController::class,'addCar']);
+
+Route::get('/admin/showCars/',[AdminController::class,'showCars']);
+Route::post('/admin/viewCar/{id}',[AdminController::class,'viewCar']);
+Route::post('/admin/editCar/{id}',[AdminController::class,'editCar']);
+Route::post('/admin/updateCar/{id}',[AdminController::class,'update']);
+Route::post('/admin/deleteCar/{id}',[AdminController::class,'deleteCar']);

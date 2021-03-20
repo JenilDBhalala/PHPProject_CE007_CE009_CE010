@@ -1,4 +1,5 @@
-
+@extends('admin.adminNav')
+@section('content')
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
         integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
@@ -11,7 +12,7 @@
         </thead>
         <tbody>
             <tr>
-                <td colspan="2" align="center"><img src="{{$car->image}}" height="300px" width="350px"></td>
+                <td colspan="2" align="center"><img src="{{$car->image}}" height="300px" width="410px"></td>
             </tr>
             <tr>
             <th scope="row">Name</th>
@@ -44,3 +45,10 @@
         </tbody>
     </table>
 </div>
+<style>
+    .table-hover{
+        background-color:#f5f5f5;
+        opacity: 0.9;
+    }
+</style>
+@endsection

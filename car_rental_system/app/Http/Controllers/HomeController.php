@@ -29,10 +29,11 @@ class HomeController extends Controller
     {
         return view('home');
     }
+
     public function adminHome()
     {
-        $cars=DB::table('car')->select('city',DB::raw('count(*) as count'),DB::raw('max(price) as max_price'),DB::raw('min(price) as min_price'))->groupBy('city')->get();
-        
+        $cars=DB::table('cars')->select('city',DB::raw('count(*) as count'),DB::raw('max(price) as
+        max_price'),DB::raw('min(price) as min_price'))->groupBy('city')->get();
         return view('adminHome',['cars'=>$cars]);
     }
 }

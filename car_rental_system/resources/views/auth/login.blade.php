@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container py-4">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
@@ -70,4 +70,22 @@
         </div>
     </div>
 </div>
+</body>
+<style>
+    /* .card {  
+        box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
+        background-color: rgba(136, 178, 241, 0.2);
+        transition: 0.3s;
+    }
+
+    .form-control{
+        opacity: 0.7;
+    } */
+
+    .card{
+        background-color:#f5f5f5;
+        color: black;
+        opacity: 0.9;    
+    }
+</style>
 @endsection

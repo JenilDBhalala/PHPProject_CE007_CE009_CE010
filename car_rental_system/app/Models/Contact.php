@@ -5,8 +5,8 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Booking extends Model
+class Contact extends Model
 {
     use HasFactory;
-    public $table="booking";
+    public $fillable = ['name', 'email', 'phone', 'subject', 'message'];
 }

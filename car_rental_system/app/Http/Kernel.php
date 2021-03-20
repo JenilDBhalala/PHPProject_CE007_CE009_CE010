@@ -43,9 +43,6 @@ class Kernel extends HttpKernel
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
         ],
-        'protectName'=>[
-            \App\Http\Middleware\checkName::class,
-        ]
     ];
 
     /**

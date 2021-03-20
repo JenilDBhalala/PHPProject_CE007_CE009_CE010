@@ -1,55 +1,77 @@
-@extends('layouts.app')
-   
+@extends('admin.adminNav')
 @section('content')
 
+<div class="card py-4">
+    <div class="card-body">
+        <h1 class="display-4">Welcome To Car Rental System</h1>
+        <p class="lead">This is a Car Rental System in which as admin you can add different car in different location
+        </p>
+        <hr class="my-4">
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Surat </b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Ahmedabad</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Vadodara</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Gandhinagar</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Rajkot</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Jamanagar</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Mahesana</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Nadiad</b>&nbsp &nbsp;
+        <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Anand</b>&nbsp &nbsp;
 
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
-        integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-        
-        <div class="jumbotron">
-            <h1 class="display-4">Welcome To Car Rental System</h1>
-            <p class="lead">This is a Car Rental System in which as admin you can add different car in different location</p>
-            <hr class="my-4">
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Surat </b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Ahmedabad</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Vadodara</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Gandhinagar</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Rajkot</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Jamanagar</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Mahesana</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Nadiad</b>&nbsp;
-                <b><i style="font-size:19px" class="fa mb-3">&#xf041</i> Anand</b>&nbsp;
-                
-            <p class="lead">
-                <a class="btn btn-info btn-lg mt-3" href="/admin/addCar/" role="button">Add More Car</a>
-            </p>
-            <p class="lead">
-                <a class="btn btn-success btn-lg mt-3" href="/admin/showCars/" role="button">See All Car</a>
-            </p>
-        </div>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg mt-3" href="/admin/addCar/" role="button">Add More Car</a>&nbsp
+            <a class="btn btn-success btn-lg mt-3" href="/admin/showCars/" role="button">See All Car</a>
+        </p>
+    </div>
+</div>
 
-            <div class="container">
-            <h2>Details of city wise car</h2>
-                <table class="table table-hover mt-4">
-                    <thead class="thead-light">
-                        <tr>
-                            <th scope="col">City</th>
-                            <th scope="col">Total Car</th>
-                            <th scope="col">Max price</th>
-                            <th scope="col">Min price</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                    @foreach($cars as $car)
-                        <tr>
-                            <th scope="row">{{$car->city}}</th>
-                            <td>{{$car->count}}</td>
-                            <td>{{$car->max_price}}</td>
-                            <td>{{$car->min_price}}</td>
-                        </tr>
-                    @endforeach
-                        
-                    </tbody>
-                </table>
-            </div>  
+<div class="container mt-4">
+    <h2>Details of city wise car</h2>
+</div>
+<div class="container mt-4">
+    <table class="table table-hover mt-4">
+        <thead class="thead-light">
+            <tr>
+                <th scope="col">City</th>
+                <th scope="col">Total Car</th>
+                <th scope="col">Max price</th>
+                <th scope="col">Min price</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($cars as $car)
+            <tr>
+                <th scope="row">{{ ucfirst(trans($car->city)) }}</th>
+                <td>{{$car->count}}</td>
+                <td>{{$car->max_price}}</td>
+                <td>{{$car->min_price}}</td>
+            </tr>
+            @endforeach
+        </tbody>
+    </table>
+</div>
+<style>
+    /* .card {
+        box-shadow: 0 0px 20px 0 rgba(0, 0, 0, 0.2);
+        background-color: rgba(136, 178, 241, 0.2);
+        transition: 0.3s;
+    } */
+
+    .card {
+        max-width: 1000px;
+        padding-left: 65px;
+        padding-right: 40px;
+        padding-top: 10px;
+        margin-top: 10px;
+        margin-left: 135px;
+        color: black;
+        opacity: 0.9;
+    }
+
+    .table {
+        background-color: aliceblue;
+        color: black;
+        opacity: 0.9;
+    }
+</style>
+
 @endsection
