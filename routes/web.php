@@ -1,9 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UserController;
-use App\Http\Controllers\CarRentalController;
+use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsFormController;
+use App\Http\Controllers\AdminController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,21 +16,23 @@ use App\Http\Controllers\ContactUsFormController;
 |
 */
 
-Route::get('/login', function () {
-    return view('login');
+Route::get('/', function () {
+    return view('ad');
 });
 
-Route::get('/logout', function () {
-    Session()->forget('user');
-    return redirect('login');
-});
+Auth::routes();
 
-
-
-Route::post("/login", [UserController::class,'login']);
-
-Route::get("/", [CarRentalController::class,'index']);
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home')->middleware('is_admin');
 
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
-
 Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
+
+Route::view('/admin/addCar','addCarForm');
+Route::post('/admin/result/',[AdminController::class,'addCar']);
+
+Route::get('/admin/showCars/',[AdminController::class,'showCars']);
+Route::post('/admin/viewCar/{id}',[AdminController::class,'viewCar']);
+Route::post('/admin/editCar/{id}',[AdminController::class,'editCar']);
+Route::post('/admin/updateCar/{id}',[AdminController::class,'update']);
+Route::post('/admin/deleteCar/{id}',[AdminController::class,'deleteCar']);
