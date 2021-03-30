@@ -47,15 +47,13 @@
 </div>
 </body>
 <style>
-    /* .card {  
-        box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
-        background-color: rgba(136, 178, 241, 0.2);
-        transition: 0.3s;
-    } */
-
     .card{
         color: black;
         opacity: 0.9;
+    }
+
+    .container{
+        margin-top: 80px;
     }
 </style>
 @endsection

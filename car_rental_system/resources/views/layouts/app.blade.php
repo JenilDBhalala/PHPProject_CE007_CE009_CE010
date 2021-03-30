@@ -19,6 +19,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -45,13 +46,13 @@
                         <a class="nav-link" href="{{ route('login') }}">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">About</a>
+                        <a class="nav-link" href="/about">About</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="/contact">Contact</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Feedback</a>
+                        <a class="nav-link" href="/services">Services</a>
                     </li>
                     @endguest
                 </ul>
@@ -79,6 +80,7 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="/home/my_booking/">My Booking</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                 {{ __('Logout') }}
@@ -96,7 +98,9 @@
         </nav>
         <div>
             <main class="py-0">
+                @include('flash-message')
                 @yield('content')
+                @extends('layouts.footer')
             </main>
         </div>
 </body>

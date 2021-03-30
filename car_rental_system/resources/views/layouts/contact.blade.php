@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
 <div class="container py-4">
     <div class="row justify-content-center">
@@ -7,16 +6,8 @@
             <div class="card">
                 <div class="card-body">
                     <div><h3>Contact Us</h3></div><br>
-                    <!-- Success message -->
-                    @if(Session::has('success'))
-                    <div class="alert alert-success">
-                        {{Session::get('success')}}
-                    </div>
-                    @endif
                     <form action="" method="post" action="{{ route('contact.store') }}">
-
                         @csrf
-
                         <div class="form-group">
                             <label>Name</label>
                             <input type="text" class="form-control {{ $errors->has('name') ? 'error' : '' }}"
@@ -77,8 +68,7 @@
                             </div>
                             @endif
                         </div>
-                        
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
                         {{-- <input type="submit" name="send" value="Submit" class="btn btn-info btn-block"> --}}
                     </form>
                 </div>

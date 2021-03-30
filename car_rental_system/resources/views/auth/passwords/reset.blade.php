@@ -1,6 +1,6 @@
 @extends('layouts.app')
-
 @section('content')
+
 <body>
 <div class="container">
     <div class="row justify-content-center">
@@ -66,12 +66,7 @@
 </body>
 <style>
     body {
-        background-color: rgb(220, 242, 252)
-    }
-    .card {  
-        box-shadow: 0 0px 20px 0 rgba(0,0,0,0.2);
-        background-color: rgba(136, 178, 241, 0.2);
-        transition: 0.3s;
+        background-color: rgb(220, 242, 252);
     }
 </style>
 @endsection

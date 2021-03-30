@@ -3,13 +3,18 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Contact;
-
+use Auth;
 
 class ContactUsFormController extends Controller {
 
     // Create Contact Form
     public function createForm(Request $request) {
-      return view('contact');
+        if(Auth::check()){
+            return view('layouts.contact');
+        }
+        else{
+            return view('user.error_404');
+        }
     }
 
     // Store Contact Form data
@@ -26,8 +31,6 @@ class ContactUsFormController extends Controller {
 
         //  Store data in database
         Contact::create($request->all());
-
-        // 
         return back()->with('success', 'We have received your message and would like to thank you for writing to us.');
     }
 }

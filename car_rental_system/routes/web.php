@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ContactUsFormController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,11 +29,11 @@ Route::get('admin/home', [HomeController::class, 'adminHome'])->name('admin.home
 Route::get('/contact', [ContactUsFormController::class, 'createForm']);
 Route::post('/contact', [ContactUsFormController::class, 'ContactUsForm'])->name('contact.store');
 
-Route::view('/admin/addCar','addCarForm');
-Route::post('/admin/result/',[AdminController::class,'addCar']);
 
-Route::get('/admin/showCars/',[AdminController::class,'showCars']);
-Route::post('/admin/viewCar/{id}',[AdminController::class,'viewCar']);
-Route::post('/admin/editCar/{id}',[AdminController::class,'editCar']);
-Route::post('/admin/updateCar/{id}',[AdminController::class,'update']);
-Route::post('/admin/deleteCar/{id}',[AdminController::class,'deleteCar']);
+Route::get('/about', function () {
+    return view('layouts/about');
+});
+
+Route::get('/services', function () {
+return view('layouts/services');
+});
