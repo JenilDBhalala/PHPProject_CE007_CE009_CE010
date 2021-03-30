@@ -66,21 +66,6 @@
 
     <h2 style="text-align:center"></h2>
     <div class="row py-4">
-        <div class="column">
-            <div class="card">
-                <hr>
-                <img src="https://media-exp1.licdn.com/dms/image/C5603AQEJNJBbqGnLnw/profile-displayphoto-shrink_200_200/0/1614880011248?e=1620864000&v=beta&t=gGBOVwRnc4YfqimDMwuHtriytAvHJSRcs8uaVNBrsNY"
-                    alt="Jane" style="width:100%">
-                <div class="container">
-                    <hr>
-                    <h3>Bhavin Babariya</h3>
-                    <p class="title">CSE 2nd year Student</p>
-                    <p class="position">Pursuing B.Tech in computer engineering at Dharamsinh Desai University, Nadiad
-                    </p>
-                    <p class="mail"><i class="fa">&#xf0e0&nbsp</i> bhavinbabariya@gmail.com</p>
-                </div>
-            </div>
-        </div>
 
         <div class="column">
             <div class="card">
@@ -97,11 +82,27 @@
                 </div>
             </div>
         </div>
+        
+        <div class="column">
+            <div class="card">
+                <hr>
+                <img src="https://media-exp1.licdn.com/dms/image/C5603AQExpX0sde_SxA/profile-displayphoto-shrink_800_800/0/1617007321058?e=1622678400&v=beta&t=-hxPYGbyrPuqwFHg78JXYlg00BdadEk5ZYIHDVmorTM"
+                    alt="Jane" style="width:100%">
+                <div class="container">
+                    <hr>
+                    <h3>Bhavin Babariya</h3>
+                    <p class="title">CSE 2nd year Student</p>
+                    <p class="position">Pursuing B.Tech in computer engineering at Dharamsinh Desai University, Nadiad
+                    </p>
+                    <p class="mail"><i class="fa">&#xf0e0&nbsp</i> bhavinbabariya@gmail.com</p>
+                </div>
+            </div>
+        </div>
 
         <div class="column">
             <div class="card">
                 <hr>
-                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQEIRBxceG2x1g/profile-displayphoto-shrink_200_200/0/1592487051996?e=1620864000&v=beta&t=0zLlutYgcXcPSjnlc7iy49vBdCKW7ZqeHegflBw9wj0"
+                <img src="https://media-exp1.licdn.com/dms/image/C4E03AQG5rymbUpfhBw/profile-displayphoto-shrink_800_800/0/1606668463572?e=1622678400&v=beta&t=-7-LMF32FaeVtK4htHfmoQTEPi1_9c8siXD6V5IX3Q4"
                     alt="Mike" style="width:100%">
                 <div class="container">
                     <hr>

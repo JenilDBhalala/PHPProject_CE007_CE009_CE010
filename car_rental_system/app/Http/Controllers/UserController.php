@@ -124,7 +124,7 @@ class UserController extends Controller
     {
         if(Auth::check())
         {
-            $bookings=DB::table('booking')->join('cars','booking.book_by','=','cars.id')->where('book_by',Auth::user()->id)->select('booking.*','cars.name as carname','cars.image as image')->get();
+            $bookings=DB::table('booking')->join('cars','booking.car_id','=','cars.id')->where('book_by',Auth::user()->id)->select('booking.*','cars.name as carname','cars.image as image')->get();
             return view('user.myBooking',['bookings'=>$bookings]);
         }
         else
